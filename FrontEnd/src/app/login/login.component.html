@@ -1,0 +1,61 @@
+<!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+  <div class="card mb-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Student Management"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form [formGroup]="login" (ngSubmit)="onSubmit()">
+            <!-- Email input -->
+
+            <div *ngIf="submitted && uname?.invalid">
+              <div class="has-error" *ngIf="uname?.errors?.['required']">
+                UserName is required</div>
+                
+            </div>
+            
+            <div class="form-outline mb-4">
+              <input type="text" id="userName" class="form-control" formControlName="uname" />
+              <label class="form-label" for="userName">User Name</label>
+            </div>
+            
+           
+            <!-- Password input -->
+
+            <div *ngIf="submitted && pass?.invalid">
+              <div *ngIf="pass?.errors?.['required']">
+                Password is required</div>
+                
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" id="studPass" class="form-control" formControlName="pass" />
+              <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+             
+              <div class="col">
+                <!-- Simple link -->
+                <a [routerLink]="['/register']">Register here</a>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

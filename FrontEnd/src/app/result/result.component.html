@@ -1,0 +1,71 @@
+
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Result</h2>
+              <form [formGroup]="result" (ngSubmit)="onSubmit()">
+                <!-- 2 column grid lay out with text inputs for the first and last names -->
+                
+                <div class="form-outline md-4">
+                    <select class="form-control" id="student" formControlName="studentId">
+                        <option value="choose">Select Student</option>
+                        <option *ngFor="let student of studentDetails" value={{student.id}}>{{student.firstname}} {{student.lastname}}</option>
+                    </select>
+                <br/>
+  
+               
+           
+                
+                  <label class="form-label" for="form3Example3">Student Name</label>
+                </div>
+  
+                
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="result" class="form-control" formControlName="studentresult" />
+                  <label class="form-label" for="result">Result</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="file" id="result" class="form-control" (change)="selectFile($event)" />
+                    <label class="form-label" for="result">Result to upload</label>
+                  </div>
+  
+                  
+  
+                
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                  Sign up
+                </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->

@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover">
+
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col" >Phone Number</th>
+            <th scope="col" >Email</th>
+            <th scope="col">Address</th>
+        </tr>
+        <tr *ngFor="let student of studentDetails">
+            <td>{{student.firstname}} {{student.lastname}}</td>
+            <td>{{student.phno}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.address}}</td>
+        </tr>
+
+</table>
